@@ -1,2 +1,3 @@
 (define (discount price dscnt)
-  (* price (/ (- 100.0 dscnt) 100.0)))
+  (/ (round (* 100 (* price (/ (- 100.0 dscnt) 100.0)))) 100.0))
+
