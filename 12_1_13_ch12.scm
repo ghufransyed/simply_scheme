@@ -44,7 +44,30 @@
          ((equal? (first sent) 'good) (se 'great (bf sent)))
          ((equal? (first sent) 'bad)  (se 'terrible (bf sent)))
          (else (se (first sent) (exaggerate (bf sent)))))))
-     
+;Ex 12.6
+(define (base-grade grade)
+  (cond ((equal? grade 'A) 4)
+        ((equal? grade 'B) 3)
+        ((equal? grade 'C) 2)
+        ((equal? grade 'D) 1)
+        (else              0)))
+
+(define (grade-modifier grade)
+      (cond ((equal? grade '+) +0.33)
+            ((equal? grade '-) -0.33)
+            (else              0)))
+
+(define (grade-cum sent)
+   (if (equal? (count sent) 1)
+      (+ (base-grade (first (first sent))) (grade-modifier (last (first sent))))
+      (+ (base-grade (first (first sent)))
+          (grade-modifier (last (first sent)))
+          (grade-cum (bf sent)))))
+
+(define (gpa sent)
+  (/ (grade-cum sent) (count sent)))
+      
+      
                   
          
          
