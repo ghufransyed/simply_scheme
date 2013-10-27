@@ -58,17 +58,16 @@
         (else (+ (count (first sent))
                  (letter-count (bf sent))))))
   
-;Ex 14.6 [in progress]
+;Ex 14.6
 (define (member? arg1 arg2)
-  (cond ((and (number? arg1) (number? arg2))  (
-        ((and (word? arg1) (sentence? arg2))  (
-        ((and (letter? arg1) (word? arg2))    (
-         
-  (if (equal? (count (se sent)) 1)
-      (if (equal? wd (word (first sent)))
+  (if (equal? (count (se arg2)) 1)
+      (if (equal? arg1 (word (first arg2)))
           #t
           #f)
-      (member? wd (bf sent))))
+       (or (if (equal? arg1 (word (first arg2)))
+               #t
+               #f)
+           (member? arg1 (bf arg2)))))
                                  
 
           
