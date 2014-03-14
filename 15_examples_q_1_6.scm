@@ -181,6 +181,33 @@ version worked, or depressed at the difference in complexity and length.. :-)
 	  (prepend-every letter (bf sent)))))
 
 
+;Ex 15.1
+#|
+(define (to-binary num)
+  (to-binary-helper num (- (quotient num 2) 1)))
+
+(define (to-binary-helper num counter)
+  (cond ((and (equal? num 0) (equal? counter 0)) 0)
+        ((and (equal? num 1) (equal? counter 0)) 1)
+        ((equal? num 0) (word 0
+                              (to-binary-helper 0 (- counter 1))))
+        (else (word (quotient num (expt 2 counter))
+                    (to-binary-helper (- num
+                                         (* (quotient num (expt 2 counter))
+                                            (expt 2 counter)))
+                                      (- counter 1))))))
+|#
+
+(define (to-binary num)
+  (to-binary-helper num 0))
+(define (to-binary-helper num counter)
+  (cond ((equal? num 0) 0)
+        ((equal? num 1) 1)
+        (else (word (to-binary-helper (- num
+                                         (* (quotient num (expt 2 counter))
+                                            (expt 2 counter)))
+                    (- num (- num (expt 2 counter))
+
 
 
 
