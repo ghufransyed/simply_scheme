@@ -1,0 +1,51 @@
+2.1
+nowhere
+(now here)
+b
+blackbird
++
+every first (thank you girl)
+#T
+(the rest of the stuff)
+i
+teicopleino
+error message
+every
+keep vowel?
+
+2.2
+the domain is the set of letters, a-z
+2.3
+it counts the number of appearances of the first argument
+within the second argument
+the domain is the set of numbers, letters, words
+the range is the set of non-negative integers
+
+2.4
+it takes an integer argument, and returns the element
+present at the corresponding position in the second 
+argument
+
+2.5
+one-argument functions for which the return value type is
+always different from the argument type
+, equal?, even? , first, last, number?
+number-of-arguments, odd?, , vowel?
+
+2.6
+one-argument functions for which the return value type is
+sometimes different from the argument type
+cos, count, expt, round
+
+2.7
+operators:
++,-,/ (sometimes),, and, not, max, 
+
+2.8
+commutative:
+and, =, +, , or
+
+2.9
++, =, equal?
+
+

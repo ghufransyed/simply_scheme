@@ -1,4 +1,4 @@
-(load "Documents/scheme/functions.scm")
+(load "functions.scm")
 
 (define (acronym phrase)
   (accumulate word (every first (keep real-word? phrase))))
